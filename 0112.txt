@@ -15,7 +15,8 @@ UTF8 一个中文对应三个字节
 Connection 连接层是字符集转变的中间着，都设置成一样会更快，不改也可以
 本机上发现字符集不正确时，修改数据库的编码（一般是没有设置成UTF8）：
 alter table tablename default character set utf8;
-
+虽然此时表的编码已经是 utf8 , 但是有可能列(属性)的编码没有更改过来,下面就是更改列属性的：
+alter table tablename change 旧属性名字 新属性名字 varchar(50) character utf8;
 
 
 
