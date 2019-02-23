@@ -13,7 +13,8 @@ UTF8 一个中文对应三个字节
 以上 set 变量 = 值;  这样的修改只是当前有效（会话级别的），下次登录又会变成默认状态，
 快捷设置字符集 ： set names gbk; -- 同时改变了client ，results和connection。
 Connection 连接层是字符集转变的中间着，都设置成一样会更快，不改也可以
-
+本机上发现字符集不正确时，修改数据库的编码（一般是没有设置成UTF8）：
+alter table tablename default character set utf8;
 
 
 
